@@ -22,15 +22,20 @@ function clock(){
 setInterval(function(){
         time--;
         timer.textContent = time;
+        console.log(time);        
+        if (time <= 0){
+            endScreen.removeAttribute('class', 'hide');
+            questionContainer.setAttribute('class', 'hide');
+            final.textContent = score;
+            questionContainer.setAttribute('class', 'hide');
+            timer.setAttribute('class', 'hide');
+            outOfTime();
+        }
     }, 1000)
-    if (time.value == 0){
-        endScreen.removeAttribute('class', 'hide');
-        questionContainer.setAttribute('class', 'hide');
-        final.textContent = score;
-    }
 };
 
-console.log(time);
+
+
 
 
 // Below functions let user know whether functions are correct or incorrect
@@ -55,6 +60,13 @@ function incorrect(){
     }, 1000);
     };
 
+    function outOfTime(){
+        feedback.innerHTML = '';
+        feedback.removeAttribute('class', "feedback hide");
+        let correct = feedback.appendChild(document.createElement('p'));
+        correct.textContent = 'You ran out of time!';
+        };
+
 // Start button click functions - this hides the start screen and sets off timer and firs questions
 
 startButton.addEventListener('click', function(event) {
@@ -74,6 +86,7 @@ if (userChoice == questions[0].correct){
     correct();
     question2();
 } else {
+    time = time - 10;
     incorrect();
     question2();
 }});
@@ -97,6 +110,7 @@ choices.addEventListener('click', function(event) {
         correct();
         question3();
     } else {
+        time = (time + 10)-10;
         incorrect();
         question3();
     }});
@@ -120,6 +134,7 @@ choices.addEventListener('click', function(event) {
         correct();
         question4()
     } else {
+        time = (time + 10)-10;
         incorrect();
         question4();
     }});
@@ -143,6 +158,7 @@ choices.addEventListener('click', function(event) {
         correct();
         question5();
     } else {
+        time = (time + 10)-10;
         incorrect();
         question5();
     }});
@@ -169,10 +185,12 @@ choices.addEventListener('click', function(event) {
         endScreen.removeAttribute('class', 'hide');
         final.textContent = score;
     } else {
+        time = (time + 10)-10
         incorrect();
         endScreen.removeAttribute('class', 'hide');
         questionContainer.setAttribute('class', 'hide');
         final.textContent = score;
+        timer.setAttribute('class', 'hide');
     }});
     };
 

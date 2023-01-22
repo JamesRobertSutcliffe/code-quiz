@@ -1,9 +1,27 @@
-# code-quiz
+## Code Quiz
 
-TODO
+## Description
 
-1 - outline questions
-2 - create buttons with answers
-3 - clicking of any button runs functions of next question + wrong or write text + logs score in variables - use user choice
-4 - final question runs function open final page
-5 - create logic that push's score variable to page and users input to local storage - push this to high scores page
+Creating the code quiz developed my javascript skills and knowledge further by creating an application utilising HTML, CSS and Javascript linked together using DOM as well as storing and retrieving with local storage. The project implements event listeners, DOM functions, javascript modules and local storage. The project allows the user to brush up on their coding knowledge in a fun and easy to use application. On completion of the project I have further developed my javascript, html and CSS skills with DOM, as well as developed skills in pushing data to local storage.
+
+## Installation
+
+N/A.
+
+## Usage
+
+Simply click the start button to begin the quiz. Select your desired answer by clicking. Once the quiz is over log you initials and high score to local storage and view this on the high scores page.
+
+![CODE-QUIZ](assets/images/Screenshot.png)
+
+## Credits
+
+N/A.
+
+## License
+
+please see license file in main branch of gitHub repository.
+
+## Deployed Site
+
+https://jamesrobertsutcliffe.github.io/code-quiz/
