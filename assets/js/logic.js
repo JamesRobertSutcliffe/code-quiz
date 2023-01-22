@@ -1,7 +1,7 @@
 import questions from "./questions.js";
 
 let timer = document.getElementById('time');
-let time = 60
+let time = 60;
 let startButton = document.querySelector('#start');
 let startScreen = document.querySelector('#start-screen');
 let questionContainer = document.querySelector('#questions');
@@ -17,16 +17,20 @@ let sub = document.querySelector('#submit');
 
 // Sets the timer
 
-// function clock(){
-//     timer.textContent = time;
-//     time = 60;
-//   do { setTimeout(function(){
-//         time--;
-//         timer.textContent = time;
-//     }, 1000)}
-//     while (time > 0);
-// };
+function clock(){
+    timer.textContent = time;    
+setInterval(function(){
+        time--;
+        timer.textContent = time;
+    }, 1000)
+    if (time.value == 0){
+        endScreen.removeAttribute('class', 'hide');
+        questionContainer.setAttribute('class', 'hide');
+        final.textContent = score;
+    }
+};
 
+console.log(time);
 
 
 // Below functions let user know whether functions are correct or incorrect
@@ -54,7 +58,7 @@ function incorrect(){
 // Start button click functions - this hides the start screen and sets off timer and firs questions
 
 startButton.addEventListener('click', function(event) {
-// clock();
+clock();
 startScreen.setAttribute('class', 'hide');
 questionContainer.removeAttribute('class', 'hide');
 questionTitle.textContent = questions[0].question;
