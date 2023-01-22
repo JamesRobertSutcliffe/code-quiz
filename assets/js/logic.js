@@ -10,6 +10,8 @@ let score = 0;
 let feedback = document.querySelector('#feedback');
 let endScreen = document.querySelector('#end-screen');
 let final = document.querySelector('#final-score');
+let initials = document.querySelector('#initials');
+let sub = document.querySelector('#submit');
 
 
 // Below functions let user know whether functions are correct or incorrect
@@ -153,3 +155,13 @@ choices.addEventListener('click', function(event) {
         final.textContent = score;
     }});
     };
+
+    // Renders the score and initials to local storage
+
+    sub.addEventListener('click', function(event){
+        localStorage.setItem("user", initials.value);
+        localStorage.setItem("score", score);
+        window.location.href="highscores.html";
+        console.log();
+    });
+
